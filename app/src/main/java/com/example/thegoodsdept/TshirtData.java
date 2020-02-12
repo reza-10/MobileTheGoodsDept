@@ -1,26 +1,29 @@
 package com.example.thegoodsdept;
 
 public class TshirtData {
-    public static String[] productName = new String[] {
-            "CANCER TEE",
-            "CANCER TEE",
-            "CANCER TEE",
-            "CANCER TEE"
-    };
+    private String ProductName;
+    private String ProductPrice;
+    private int ProductImage;
 
-    public static String[] productPrice = new String[] {
-            "IDR699,000.00",
-            "IDR699,000.00",
-            "IDR699,000.00",
-            "IDR699,000.00"
-    };
+    public TshirtData(){
 
-    public static int[] productImage = new int[]{
-            R.drawable.img_product_tshirt,
-            R.drawable.img_product_tshirt,
-            R.drawable.img_product_tshirt,
-            R.drawable.img_product_tshirt,
-    };
+    }
 
+    public TshirtData(String productName, String productPrice, int productImage) {
+        ProductName = productName;
+        ProductPrice = productPrice;
+        ProductImage = productImage;
+    }
 
+    public String getProductName() {
+        return ProductName;
+    }
+
+    public String getProductPrice() {
+        return ProductPrice;
+    }
+
+    public int getProductImage() {
+        return ProductImage;
+    }
 }

@@ -15,9 +15,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter {
+    private List<TshirtData> tshirtDataList;
 
+    public RecyclerViewAdapter(List<TshirtData> tshirtDataList){
+        this.tshirtDataList = tshirtDataList;
+    }
+
+    public RecyclerViewAdapter() {
+
+    }
 
     @NonNull
     @Override
@@ -33,7 +42,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return TshirtData.productName.length;
+        return tshirtDataList.size();
     }
 
     private class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -53,9 +62,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         }
 
         public void bindView(int position){
-            mProductImage.setImageResource(TshirtData.productImage[position]);
-            mProductName.setText(TshirtData.productName[position]);
-            mProductPrice.setText(TshirtData.productPrice[position]);
+            TshirtData td = tshirtDataList.get(position);
+            mProductImage.setImageResource(td.getProductImage());
+            mProductName.setText(td.getProductName());
+            mProductPrice.setText(td.getProductPrice());
         }
 
         @Override

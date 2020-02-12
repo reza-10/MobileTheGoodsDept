@@ -14,12 +14,17 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DatabaseReference;
+
 import java.util.ArrayList;
+import java.util.List;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class FragmentWomen extends Fragment {
     View view;
+
+    private List<TshirtData> tshirtDataList;
 
 
     @Nullable
@@ -33,6 +38,10 @@ public class FragmentWomen extends Fragment {
         recyclerView.setAdapter( recyclerViewAdapter);
         @SuppressLint("WrongConstant") RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayout.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
+
+        tshirtDataList = new ArrayList<>();
+
+        final DatabaseReference
 
         return view;
     }
