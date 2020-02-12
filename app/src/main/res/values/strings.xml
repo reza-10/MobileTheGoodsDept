@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">The Goods Dept</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="username">Username</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_social">Social</string>
+    <string name="nav_second_hand">SecondHand</string>
+    <string name="nav_notification">Notification</string>
+    <string name="nav_profile">Profile</string>
+    <string name="secondhand">SecondHand</string>
+    <string name="title_activity_bottom">Bottom</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="see_all">See All</string>
+</resources>

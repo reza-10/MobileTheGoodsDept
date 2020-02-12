@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "571712372074",
+    "firebase_url": "https://thegoodsdept10.firebaseio.com",
+    "project_id": "thegoodsdept10",
+    "storage_bucket": "thegoodsdept10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571712372074:android:82b2f37eebd628014ab913",
+        "android_client_info": {
+          "package_name": "com.example.thegoodsdept"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571712372074-v486h3f80gml3k1dc51vuc7pevunhnl7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.thegoodsdept",
+            "certificate_hash": "c466b7218a991aa18a54ea14f1084fdd77bc29db"
+          }
+        },
+        {
+          "client_id": "571712372074-fmn7f2nfmo6hatuav40dri0cgdpjl48p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwaF1R6oXATdIjob9qwJhaetDKtHbtJGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571712372074-fmn7f2nfmo6hatuav40dri0cgdpjl48p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
