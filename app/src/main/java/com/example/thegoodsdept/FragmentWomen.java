@@ -14,7 +14,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +29,8 @@ public class FragmentWomen extends Fragment {
     View view;
 
     private List<TshirtData> tshirtDataList;
+    private RecyclerView recyclerView;
+    private RecyclerViewAdapter adapter;
 
 
     @Nullable
@@ -32,16 +38,34 @@ public class FragmentWomen extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_women,container,false);
 
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerTshirt);
+        recyclerView = view.findViewById(R.id.recyclerTshirt);
 
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter();
-        recyclerView.setAdapter( recyclerViewAdapter);
-        @SuppressLint("WrongConstant") RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayout.HORIZONTAL, false);
+        recyclerView.setHasFixedSize(true);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
         tshirtDataList = new ArrayList<>();
 
-        final DatabaseReference
+        final DatabaseReference nm = FirebaseDatabase.getInstance().getReference("TshirtWomenProduct");
+        nm.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    for (DataSnapshot npsnpashot : dataSnapshot.getChildren()){
+                        TshirtData td = npsnpashot.getValue(TshirtData.class);
+                        tshirtDataList.add(td);
+                    }
+                    adapter = new RecyclerViewAdapter(tshirtDataList);
+                    recyclerView.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         return view;
     }

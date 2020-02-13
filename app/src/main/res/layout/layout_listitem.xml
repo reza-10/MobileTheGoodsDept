@@ -50,7 +50,7 @@
                 android:id="@+id/button"
                 style="@style/ButtonAddtoCart"
                 android:layout_marginTop="8dp"
-                android:text="Button"
+                android:text="Add to cart"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ProductPrice" />
         </androidx.constraintlayout.widget.ConstraintLayout>
